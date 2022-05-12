@@ -1,0 +1,203 @@
+
+
+mat-tab-group
+{
+    min-height: 400px;
+    
+}
+
+.mat-tab-labels
+{
+    display: flex;
+    justify-content: center;
+}
+
+.input-vertical
+{
+    padding-top: 50px;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+
+}
+
+.input-vertical mat-form-field
+{
+
+    min-height: 120px;
+    max-width: 200px;
+}
+
+.input-vertical mat-form-field input
+{
+    position: relative;
+    min-height: 60px;
+}
+
+mat-card
+{
+    border: 3px;
+    padding-left: 5px;
+    font-family:cursive;
+    background-color:#ffd98e;
+    max-height: 800px;
+}
+
+mat-card-content th,td
+{
+    vertical-align: top;
+}
+
+table
+{
+    font-family:cursive;
+    font-weight: medium;
+    font-size: medium;
+}
+
+mat-card img 
+{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.mat-card-container
+{
+    display:inline;
+    justify-content: center;
+}
+
+.inline-block
+{
+    padding: 15px;
+    min-width: 200px;
+}
+
+
+.action-buttons
+{
+    padding: 10px;
+}
+
+.button-container
+{
+    display: inline-flex;
+}
+
+
+
+
+::ng-deep .mat-card{
+    border-radius: 30px !important;
+    border: 2px solid #000 !important;
+    width: 250px;
+   }
+
+   .every-card
+   {
+    flex-wrap: wrap;
+    place-content: center space-around; 
+       display: flex;
+   }
+
+   .card-elements-class
+   {
+       
+    height: 100%; 
+    flex-direction: column;
+    box-sizing: border-box; 
+    display: flex;  
+    place-content: center space-around;
+    align-items: center; 
+   }
+
+   .bottom-nav-bar
+   {/*
+    background: linear-gradient(0deg, #767984 30%, #515664);*/
+    background: linear-gradient(0deg, #3e5257 30%, #293538 );
+   
+   }
+
+   .bottom-nav-bar-body
+   {
+       /*
+    background: linear-gradient(0deg, #515664 10%, #748499);*/
+    background: linear-gradient(0deg, #3e5257 30%, #293538 );
+    background-color: #80b9c7;
+    height:fit-content;
+   }
+
+
+  .input-vertical
+  {
+      max-width: 80%;
+      max-height: 80%;
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+      align-content: center;
+      
+  }
+  
+  .form-border
+  {
+      padding: 22px;
+      background-color: #ffd98e;
+      margin-top: 150px;
+      border-radius: 9%;
+      /* justify-content: center; */
+      /* align-content: center; */
+      /* justify-items: center; */
+      /* align-items: baseline; */
+      display: flex;
+      justify-content: center;
+      width: 600px;
+      
+  }
+  
+  
+  
+  .form-div
+  {
+      padding-top: 50px;
+      display: grid;
+      justify-content: center;
+      justify-items: center;
+      margin-right: 25px;
+      font-family: cursive;
+  }
+
+  .form-div input
+  {
+    font-size: 15px;
+    line-height: 1.2;
+    position: relative;
+    display: block;
+    height: 55px;
+    background: #ebebeb;
+    border-radius: 27px;
+    padding: 0 35px 0 35px;
+    
+  }
+
+  .form-div input,label
+  {
+    margin-top: 20px;
+  }
+      
+  
+  .mat-tab-body-wrapper
+  {
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+      align-content: center;
+  }
+
+ 
+
+
+
+
+

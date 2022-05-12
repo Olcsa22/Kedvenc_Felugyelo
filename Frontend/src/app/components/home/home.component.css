@@ -1,0 +1,29 @@
+.top-nav-bar
+{
+    background-color: #293538;
+}
+
+.body-class
+{
+    background: linear-gradient(0deg, #3e5257 100%, #3e5257);
+}
+
+.mat-tab-label {
+    font-size:X-large;
+    font-weight: bold;
+    color:#df9931 !important;
+    text-shadow:3px 3px #000 !important;
+    background-color: transparent;
+    opacity: 1;
+}
+
+/* Styles for the active tab label */
+
+.mat-tab-label.mat-tab-label-active {
+    font-size:x-large;
+    font-weight: bold;
+    color:#df9931 !important;
+    text-shadow:3px 3px #000 !important;
+    background-color: transparent;
+    opacity: 1;
+}

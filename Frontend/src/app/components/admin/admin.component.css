@@ -1,0 +1,149 @@
+mat-stepper
+{
+    background-color: aliceblue;
+}
+
+mat-tab-group
+{
+    min-height: 400px;
+}
+
+.input-vertical
+{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.input-vertical mat-form-field
+{
+    
+    min-height: 120px;
+    max-width: 200px;
+}
+
+.input-vertical mat-form-field input
+{
+    position: relative;
+    min-height: 60px;
+}
+
+mat-card
+{
+    border: 3px;
+    padding-left: 5px;
+    font-family:cursive;
+    background-color:#ffd98e;
+    max-height: 800px;
+}
+
+mat-card-content th,td
+{
+    vertical-align: top;
+}
+
+table
+{
+    font-family:cursive;
+    font-weight: medium;
+    font-size: medium;
+}
+
+mat-card img 
+{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.mat-card-container
+{
+    display:inline;
+    justify-content: center;
+}
+
+.inline-block
+{
+    padding: 15px;
+    min-width: 200px;
+}
+
+
+.action-buttons
+{
+    padding: 10px;
+}
+
+.button-container
+{
+    display: inline-flex;
+}
+
+.form-div
+{
+    padding-left: 30px;
+}
+
+.submitbutton
+{
+    max-width: 100px;
+    padding-bottom: 20px;
+}
+
+::ng-deep .mat-card{
+    border-radius: 30px !important;
+    border: 2px solid #000 !important;
+    width: 300px;
+    height: 600px;
+   }
+
+   .every-card
+   {
+    flex-wrap: wrap;
+    place-content: center space-around; 
+       display: flex;
+   }
+
+   .card-elements-class
+   {
+       
+    height: 100%; 
+    flex-direction: column;
+    box-sizing: border-box; 
+    display: flex;  
+    place-content: center space-around;
+    align-items: center; 
+   }
+
+   .bottom-nav-bar
+   {/*
+    background: linear-gradient(0deg, #767984 30%, #515664);*/
+    background: linear-gradient(0deg, #3e5257 30%, #293538 );
+   }
+
+   .bottom-nav-bar-body
+   {
+       /*
+    background: linear-gradient(0deg, #515664 10%, #748499);*/
+    background: linear-gradient(0deg,#455e64,#567780);
+    height:fit-content;
+   }
+
+  /* ::ng-deep .mat-tab-label .mat-tab-label-content {
+    font-size:x-large;
+    font-weight: bold;
+    color:#df9931 !important;
+    text-shadow:3px 3px #000 !important;
+    background-color: transparent;
+    
+    
+}*/
+
+::ng-deep .mat-tab
+{
+    border-color: aliceblue !important;
+    border: 10px !important;
+    border-radius: 40%;
+}
+
+

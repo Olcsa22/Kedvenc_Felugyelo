@@ -1,0 +1,15 @@
+<app-header></app-header>
+
+<mat-tab-group class="top-nav-bar" >
+    
+    <mat-tab label="Kutyusaim"><app-dog></app-dog> </mat-tab>
+    <mat-tab label="Cicáim"> <app-cat></app-cat> </mat-tab>
+    <mat-tab label="Hörcsögeim"> <app-hamster></app-hamster> </mat-tab>
+    <div *ngIf="user.roles!.includes('ROLE_ADMIN')">
+    <mat-tab label="Admin panel"><app-admin></app-admin></mat-tab>
+
+    </div>
+</mat-tab-group>
+<body class="body-class"></body>
+
+

@@ -1,0 +1,75 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<mat-tab-group class="bottom-nav-bar">
+    <div class="bottom-nav-bar-body">
+    <mat-tab label="Meglévők megtekintése">
+
+        <div class="every-card">
+        <div *ngFor="let cat of cats;" class="inline-block">
+            <mat-card>
+                <div class="card-elements-class">
+                <mat-card-title><p>{{cat.name}} cicus</p></mat-card-title>
+                <picture><img mat-card-image [src]="cat.url"></picture>
+                <mat-card-content>
+                    <table>
+                    <tr><td><p>Utolsó etetés ideje:</td><td> {{cat.lastFeeding | date: 'yyyy-MM-dd h:mm'}}</td>
+                    <tr><td><p>Benti cicus:</td> <td>{{cat.indoor?"Igen":"Nem"}}</td>
+                    <tr><td><p>Utolsó oltás ideje:</td> <td>{{cat.vaccinated}}</td>
+                </table>
+                </mat-card-content>
+                <mat-card-actions>
+                    <div class="button-container">
+                    <div class="action-buttons">
+                    <button mat-fab color="primary" (click)="deleteCat(cat.id)">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </div>
+                    <div class="action-buttons">
+                      <button mat-fab color="primary" (click)="openOptionsDialog(cat.id)">
+                        <mat-icon>settings</mat-icon>
+                      </button>
+                    </div>
+                    <div class="action-buttons">
+                      <button (click)="openDialog(cat.needs!)" mat-fab color="primary">
+                        <div *ngIf="cat.needs?.length!>0 && !cat.needs?.includes('minden rendben');else nonotif">
+                        <mat-icon [matBadge]="cat.needs?.length" matBadgeColor="warn">notifications</mat-icon>
+                        </div>
+                        <ng-template #nonotif>
+                            <mat-icon>notifications</mat-icon>
+                        </ng-template>
+
+                    </button>
+                    </div>
+                </div>
+                </mat-card-actions>
+            </div>
+            </mat-card>
+        </div>
+    </div>
+        </mat-tab>
+        <mat-tab label="Új felvétele" [ngClass]="['tab-form']">
+          <div class="input-vertical">
+            <div class="form-border">
+            <form (ngSubmit)="addCat(ngForm)" #ngForm="ngForm">
+                <div class="form-div">
+                    
+                        <label>Név</label>
+                        <input  [(ngModel)]="model.name" name="animalname" id="animalname">
+                        <label >Utolsó etetés</label>
+                        <input type="datetime-local" [(ngModel)]="model.lastFeeding" name="lastFeeding" id="lastFeeding">  
+                        <label >Etetési intervallum (óra)</label>
+                        <input type="number" [(ngModel)]="model.feedingInterval" name="feedingInterval" id="feedingInterval">
+                        <label >Utolsó oltás dátuma</label>
+                        <input  type="date" [(ngModel)]="model.vaccinated" name="vaccinated" id="vaccinated">
+                        <label>Benti cicus</label>
+                        <input type="checkbox" [(ngModel)]="model.indoor" name="indoor" id="indoor">
+                      <input type="submit" class="submitbutton">
+                    
+                      
+                </div>
+            </form>
+          </div>
+        </div>
+        </mat-tab>
+    </div>
+    </mat-tab-group>
+    

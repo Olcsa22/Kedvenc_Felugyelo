@@ -1,0 +1,177 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<mat-tab-group class="bottom-nav-bar">
+    <div class="bottom-nav-bar-body">
+    <mat-tab label="Összes Kutya" class="md-accent">
+        <div class="every-card">
+            <div *ngFor="let dog of allDogs;" class="inline-block">
+                <mat-card>
+                    <div class="card-elements-class">
+                    <mat-card-title><p>{{dog.name}} kutyus</p></mat-card-title>
+                    <picture><img mat-card-image src="{{dog.url}}"></picture>
+                    <mat-card-content>
+                        <table>
+                        <tr><td><p>Utolsó séta ideje:</td><td> {{dog.lastWalking}} </td>
+                        <tr><td><p>Utolsó etetés ideje:</td><td> {{dog.lastFeeding | date: 'yyyy-MM-dd h:mm'}}</td>
+                        <tr><td><p>Benti kutya:</td> <td>{{dog.indoor?"Igen":"Nem"}}</td>
+                        <tr><td><p>Utolsó oltás ideje:</td> <td>{{dog.vaccinated}}</td>
+                        <tr><td><p>Utolsó séta ideje:</td><td> {{dog.lastWalking}}</td>
+                    </table>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <div class="button-container">
+                        <div class="action-buttons">
+                        <button mat-fab color="primary" (click)="deleteDog(dog.id)">
+                            <mat-icon>delete</mat-icon>
+                          </button>
+                        </div>
+                        <div class="action-buttons">
+                          <button mat-fab color="primary" (click)="openOptionsDialog(dog.id)">
+                            <mat-icon>settings</mat-icon>
+                          </button>
+                        </div>
+                        <div class="action-buttons">
+                            
+                            <button (click)="openDialog(dog.needs!)" mat-fab color="primary">
+                                <div *ngIf="dog.needs?.length!>0 && !dog.needs?.includes('minden rendben');else nonotif">
+                                <mat-icon [matBadge]="dog.needs?.length" matBadgeColor="warn">notifications</mat-icon>
+                                </div>
+                                <ng-template #nonotif>
+                                    <mat-icon>notifications</mat-icon>
+                                </ng-template>
+
+                            </button>
+                          </div>
+                    </div>
+                    </mat-card-actions>
+                </div>
+                </mat-card>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Összes Cica" class="md-accent">
+        <div class="every-card">
+            <div *ngFor="let cat of allCats;" class="inline-block">
+                <mat-card>
+                    <div class="card-elements-class">
+                    <mat-card-title><p>{{cat.name}} cicus</p></mat-card-title>
+                    <picture><img mat-card-image src="{{cat.url}}"></picture>
+                    <mat-card-content>
+                        <table>
+                        <tr><td><p>Utolsó etetés ideje:</td><td> {{cat.lastFeeding | date: 'yyyy-MM-dd h:mm'}}</td>
+                        <tr><td><p>Benti cicus:</td> <td>{{cat.indoor?"Igen":"Nem"}}</td>
+                        <tr><td><p>Utolsó oltás ideje:</td> <td>{{cat.vaccinated}}</td>
+                    </table>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <div class="button-container">
+                        <div class="action-buttons">
+                        <button mat-fab color="primary" (click)="deleteCat(cat.id)">
+                            <mat-icon>delete</mat-icon>
+                          </button>
+                        </div>
+                        <div class="action-buttons">
+                          <button mat-fab color="primary" (click)="openCatOptionsDialog(cat.id)">
+                            <mat-icon>settings</mat-icon>
+                          </button>
+                        </div>
+                        <div class="action-buttons">
+                            
+                            <button (click)="openCatDialog(cat.needs!)" mat-fab color="primary">
+                                <div *ngIf="cat.needs?.length!>0 && !cat.needs?.includes('minden rendben');else nonotif">
+                                <mat-icon [matBadge]="cat.needs?.length" matBadgeColor="warn">notifications</mat-icon>
+                                </div>
+                                <ng-template #nonotif>
+                                    <mat-icon >notifications</mat-icon>
+                                </ng-template>
+                            </button>
+                          </div>
+                    </div>
+                    </mat-card-actions>
+                </div>
+                </mat-card>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Összes hörcsög" class="md-accent">
+        <div class="every-card">
+            <div *ngFor="let hamster of allHamsters;" class="inline-block">
+                <mat-card>
+                    <div class="card-elements-class">
+                    <mat-card-title><p>{{hamster.name}} hörcsög</p></mat-card-title>
+                    <picture><img mat-card-image src="{{hamster.url}}"></picture>
+                    <mat-card-content>
+                        <table>
+                        <tr><td><p>Utolsó etetés ideje:</td><td> {{hamster.lastFeeding | date: 'yyyy-MM-dd h:mm'}}</td>
+                        <tr><td><p>Fogkoptató cserélve:</td> <td>{{hamster.toothwearerChanged}}</td>
+                    </table>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <div class="button-container">
+                        <div class="action-buttons">
+                        <button mat-fab color="primary" (click)="deleteHamster(hamster.id)">
+                            <mat-icon>delete</mat-icon>
+                          </button>
+                        </div>
+                        <div class="action-buttons">
+                          <button mat-fab color="primary" (click)="openHamsterOptionsDialog(hamster.id)">
+                            <mat-icon>settings</mat-icon>
+                          </button>
+                        </div>
+                        <div class="action-buttons">
+                            
+                            <button (click)="openHamsterDialog(hamster.needs)" mat-fab color="primary">
+                                <div *ngIf="hamster.needs?.length!>0 && !hamster.needs?.includes('minden rendben');else nonotif">
+                                <mat-icon [matBadge]="hamster.needs?.length" matBadgeColor="warn">notifications</mat-icon>
+                                </div>
+                                <ng-template #nonotif>
+                                    <mat-icon>notifications</mat-icon>
+                                </ng-template>
+                            </button>
+                          </div>
+                    </div>
+                    </mat-card-actions>
+                </div>
+                </mat-card>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Összes felhasználó" class="md-accent">
+        <div class="every-card">
+            <div *ngFor="let user of allusers;" class="inline-block">
+                <mat-card>
+                    <div class="card-elements-class">
+                    <mat-card-title><p>{{user.username}} felhasználó</p></mat-card-title>
+                    <picture><img mat-card-image src="../../../assets/usericon.webp"></picture>
+                    <mat-card-content>
+                        <table>
+                        <tr><td><p>Email cím:</td><td> {{user.email }}</td>
+                        <tr><td><p>Regisztráció ideje:</td> <td>{{user.register | date: 'yyyy-MM-dd h:mm'}}</td>
+                        <tr><td><p>Felhasználói rang:</td><div *ngIf="user.roles![0]['name'].includes('ADMIN'); else userrole">
+                            <td>Admin</td></div>
+                            <ng-template #userrole>
+                                <td>Felhasználó</td>
+                                </ng-template>
+                            
+                    </table>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <div class="button-container">
+                        <div class="action-buttons">
+                        <button *ngIf="!user.roles![0]['name'].includes('ADMIN')" mat-fab color="primary" (click)="deleteUser(user.id)">
+                            <mat-icon>delete</mat-icon>
+                          </button>
+                        </div>
+                        <!--<div class="action-buttons">
+                          <button *ngIf="!user.roles![0]['name'].includes('ADMIN')" mat-fab color="primary" >
+                            <mat-icon>settings</mat-icon>
+                          </button>
+                        </div>-->
+                    </div>
+                    </mat-card-actions>
+                </div>
+                </mat-card>
+            </div>
+        </div>
+    </mat-tab>
+    </div>
+</mat-tab-group>

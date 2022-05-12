@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>Adatok frissítése</h2>
+<mat-dialog-content >
+    <div class="every-form">
+    <form (ngSubmit)="updateLastFeeding(model.id!,feeding.value!)">
+        <div class="form-elements">
+            <div class="form-input">
+        <input matInput type="datetime-local"  name="lastFeeding" id="lastFeeding" #feeding> 
+            </div>
+            <div class="form-button">
+      <button mat-raised-button type="submit" color="primary">Megetetve</button> 
+            </div>
+    </div>
+    </form>
+    
+    <form (ngSubmit)="updatelastVaccinating(model.id!,vaccinated.value)">
+        <div class="form-elements">
+            <div class="form-input">
+        <input matInput  type="date" name="vaccinated" id="vaccinated" #vaccinated>
+    </div>
+    <div class="form-button">
+      <button mat-raised-button type="submit" color="primary">Beoltva</button>
+    </div>
+        </div>
+    </form>
+</div>
+    
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close color="primary" (click)="close()">Bezárás</button>
+</mat-dialog-actions>
